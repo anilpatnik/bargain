@@ -9,7 +9,6 @@
 - Dependency Injection
 - C# Unit Testing (Moq)
 - Swashbuckle (API documentation)
-
 - React Hooks
 - Redux (State Management)
 - React Router 4
