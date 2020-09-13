@@ -16,21 +16,15 @@ namespace Bargain.Repositories
         {
             return await _context.Movie
                 .AsNoTracking()
-                .Select(x => new
-                {
-                    x.Id,
-                    x.Name,
-                    x.Code,
-                    x.Slug,
-                    x.GenreId,
-                    Genre = x.Genre.Desc
-                })
+                .Include(x => x.Genre)
                 .ToListAsync();
         }
 
         public async Task<Movie> GetAsync(int id)
         {
-            return await _context.Movie.Include(x => x.Genre).AsNoTracking().FirstOrDefaultAsync(x => x.Id.Equals(id));
+            return await _context.Movie
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id.Equals(id));
         }
 
         public async Task AddAsync(Movie movie)
@@ -40,7 +34,9 @@ namespace Bargain.Repositories
 
         public async Task<Movie> FindByIdAsync(int id)
         {
-            return await _context.Movie.Include(p => p.Genre).FirstOrDefaultAsync(x => x.Id == id);
+            return await _context.Movie
+                .AsNoTracking()
+                .FirstOrDefaultAsync(x => x.Id == id);
         }
 
         public void Update(Movie movie)

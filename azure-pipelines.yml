@@ -18,13 +18,28 @@ steps:
   - task: UseDotNet@2
     displayName: "Install .NET Core SDK"
     inputs:
-      version: "3.0.x"
-
+      version: "3.1.x"
+      
   - task: DotNetCoreCLI@2
+      displayName: 'dotnet build'
+      inputs:
+        command: build
+        projects: "$(solution)"
+        arguments: "--configuration $(buildConfiguration)"
+      
+  - task: DotNetCoreCLI@2
+    displayName: 'dotnet test'
     inputs:
-      command: build
-      projects: "$(solution)"
-      arguments: "--configuration $(buildConfiguration)"
+      command: 'test'
+      arguments: '--configuration $(buildConfiguration) /p:CollectCoverage=true /p:CoverletOutputFormat=cobertura /p:CoverletOutput=$(Build.SourcesDirectory)/TestResults/Coverage/'
+      publishTestResults: true
+      projects: '**/*Tests/*.csproj' 
+
+  - task: PublishCodeCoverageResults@1
+    displayName: 'Publish code coverage report'
+    inputs:
+      codeCoverageTool: 'Cobertura'
+      summaryFileLocation: '$(Build.SourcesDirectory)/**/coverage.cobertura.xml'  
 
   - task: DotNetCoreCLI@2
     inputs:
@@ -37,3 +52,4 @@ steps:
     inputs:
       pathtoPublish: "$(Build.ArtifactStagingDirectory)"
       artifactName: "bargain"
+      
