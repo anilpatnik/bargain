@@ -1,0 +1,16 @@
+{
+  "name" : "name",
+  "email": "merchant1@facebook.com",
+  "recordId": "824778aa-b41a-4162-b951-5a7a9e3aed5d"
+}
+
+{
+  "name" : "name",
+  "email": "merchant3@email.com",
+  "recordId": "0c50fe37-3aaf-4bbc-8e77-7c4dc4ee6399"
+}
+
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1lcmNoYW50T25lIEZhY2Vib29rIiwiZW1haWwiOiJtZXJjaGFudDFAZmFjZWJvb2suY29tIiwicm9sZSI6Ik1lcmNoYW50IiwibmJmIjoxNjIyOTc2Njg4LCJleHAiOjE2MjM1ODE0ODgsImlhdCI6MTYyMjk3NjY4OH0.ZpMEaDgwIjZXcBavGNlKAZfLQZO3TN7z7mYwlnobW3g
+
+eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1bmlxdWVfbmFtZSI6Ik1lcmNoYW50VGhyZWUgRW1haWwiLCJlbWFpbCI6Im1lcmNoYW50M0BlbWFpbC5jb20iLCJyb2xlIjoiTWVyY2hhbnQiLCJuYmYiOjE2MjI4MDAwNTksImV4cCI6MTYyMzQwNDg1OSwiaWF0IjoxNjIyODAwMDU5fQ.Fn-K6uEj5rc_JfZkV4kbXlIb6zCRj6NjiSQ2dWDMNtE
